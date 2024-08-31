@@ -1,0 +1,143 @@
+[gd_scene load_steps=16 format=3 uid="uid://bw6nb1rctcq5"]
+
+[ext_resource type="Script" path="res://scripts/pause_menu.gd" id="1_c7po4"]
+[ext_resource type="Shader" path="res://shaders/blur.gdshader" id="2_osm4e"]
+[ext_resource type="Texture2D" uid="uid://dukwqyi34tran" path="res://assets/ui_component/DialogueBox.png" id="3_jm056"]
+[ext_resource type="Texture2D" uid="uid://c632xb3bjp2mm" path="res://assets/frogs/NFTFrogs/KingFrog.png" id="4_c4eve"]
+[ext_resource type="FontFile" uid="uid://dv1b0itpdjj42" path="res://assets/fonts/PeaberryBase.ttf" id="5_xj5vr"]
+[ext_resource type="Shader" path="res://shaders/Text.gdshader" id="6_awwfn"]
+[ext_resource type="Texture2D" uid="uid://cf5huud2gyb85" path="res://assets/ui_component/Buttons2.png" id="7_e8kgv"]
+[ext_resource type="Script" path="res://scripts/ui_button.gd" id="8_0sbsd"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jr0ov"]
+shader = ExtResource("2_osm4e")
+shader_parameter/blur_radius = 5.0
+shader_parameter/samples = 16
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_pa5kw"]
+shader = ExtResource("6_awwfn")
+shader_parameter/frequency = 1.0
+shader_parameter/height = 2.0
+shader_parameter/speed = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ouohm"]
+texture = ExtResource("7_e8kgv")
+region_rect = Rect2(15, 13, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8tai1"]
+texture = ExtResource("7_e8kgv")
+region_rect = Rect2(15, 61, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ahpe"]
+texture = ExtResource("7_e8kgv")
+region_rect = Rect2(15, 109, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7b8on"]
+texture = ExtResource("7_e8kgv")
+region_rect = Rect2(15, 61, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_yh2vg"]
+texture = ExtResource("7_e8kgv")
+region_rect = Rect2(15, 61, 81, 26)
+
+[node name="PauseMenu" type="Node2D"]
+process_mode = 3
+script = ExtResource("1_c7po4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_jr0ov")
+offset_left = -178.0
+offset_top = -74.0
+offset_right = 1207.0
+offset_bottom = 684.0
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+offset_left = 179.0
+offset_top = 88.0
+offset_right = 908.0
+offset_bottom = 543.0
+texture = ExtResource("3_jm056")
+
+[node name="KingFrog" type="Sprite2D" parent="."]
+position = Vector2(544, 414)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("4_c4eve")
+
+[node name="Title" type="Label" parent="."]
+offset_left = 402.0
+offset_top = 114.0
+offset_right = 714.0
+offset_bottom = 162.0
+theme_override_colors/font_color = Color(0.172549, 0.172549, 0.172549, 1)
+theme_override_fonts/font = ExtResource("5_xj5vr")
+theme_override_font_sizes/font_size = 48
+text = "Game Paused"
+
+[node name="Info" type="Label" parent="."]
+offset_left = 483.0
+offset_top = 189.0
+offset_right = 891.0
+offset_bottom = 547.0
+theme_override_colors/font_color = Color(0.172549, 0.172549, 0.172549, 1)
+theme_override_fonts/font = ExtResource("5_xj5vr")
+theme_override_font_sizes/font_size = 32
+text = "King Frog Says !! Start the game or You die with my own tongue"
+autowrap_mode = 3
+
+[node name="ResumeButton" type="Button" parent="."]
+material = SubResource("ShaderMaterial_pa5kw")
+offset_left = 226.0
+offset_top = 192.0
+offset_right = 604.0
+offset_bottom = 319.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_xj5vr")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_ouohm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8tai1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ahpe")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7b8on")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yh2vg")
+text = "Resume"
+script = ExtResource("8_0sbsd")
+
+[node name="MainMenu" type="Button" parent="."]
+material = SubResource("ShaderMaterial_pa5kw")
+offset_left = 227.0
+offset_top = 267.0
+offset_right = 605.0
+offset_bottom = 394.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_xj5vr")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_ouohm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8tai1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ahpe")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7b8on")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yh2vg")
+text = "Main Menu"
+script = ExtResource("8_0sbsd")
+
+[node name="Quit" type="Button" parent="."]
+material = SubResource("ShaderMaterial_pa5kw")
+offset_left = 229.0
+offset_top = 346.0
+offset_right = 607.0
+offset_bottom = 473.0
+scale = Vector2(0.5, 0.5)
+theme_override_fonts/font = ExtResource("5_xj5vr")
+theme_override_font_sizes/font_size = 48
+theme_override_styles/normal = SubResource("StyleBoxTexture_ouohm")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8tai1")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1ahpe")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_7b8on")
+theme_override_styles/focus = SubResource("StyleBoxTexture_yh2vg")
+text = "Quit"
+script = ExtResource("8_0sbsd")
+
+[connection signal="pressed" from="ResumeButton" to="." method="_on_resume_button_pressed"]
+[connection signal="pressed" from="ResumeButton" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="MainMenu" to="." method="_on_continue_button_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_continue_button_pressed"]

@@ -1,0 +1,81 @@
+[gd_scene load_steps=12 format=3 uid="uid://bi80485um3huy"]
+
+[ext_resource type="Texture2D" uid="uid://c85idrfrua28v" path="res://assets/ui_component/CroakSheet.png" id="1_ak2b6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r5nxg"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(0, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2j0j"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(538, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5h2jv"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(1076, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1h6j4"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(1614, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l18y1"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(2152, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h4ify"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(2690, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ol7at"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(3228, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1rg7l"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(3766, 0, 538, 464)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kn74h"]
+atlas = ExtResource("1_ak2b6")
+region = Rect2(4304, 0, 538, 464)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_mbuyi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r5nxg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2j0j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5h2jv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1h6j4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l18y1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h4ify")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ol7at")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1rg7l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kn74h")
+}],
+"loop": true,
+"name": &"default",
+"speed": 6.5
+}]
+
+[node name="Croak" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_mbuyi")
+autoplay = "default"
+frame_progress = 0.0587212

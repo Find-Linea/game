@@ -1,0 +1,90 @@
+[gd_scene load_steps=16 format=3 uid="uid://cml7cthkrm6gy"]
+
+[ext_resource type="Shader" path="res://shaders/dissolve.gdshader" id="1_0ahsh"]
+[ext_resource type="Texture2D" uid="uid://bw2d64b56rg4p" path="res://assets/frogs/ToxicFrogGreenBlue_Idle.png" id="1_0ola6"]
+[ext_resource type="Script" path="res://scripts/frog.gd" id="2_caoio"]
+[ext_resource type="Texture2D" uid="uid://h7cyutxcxax0" path="res://assets/frogs/BlueBlue/ToxicFrogBlueBlue_Idle.png" id="2_lxmbs"]
+[ext_resource type="Texture2D" uid="uid://d03dac6bvknk" path="res://assets/frogs/PurpleBlue/ToxicFrogPurpleBlue_Idle.png" id="4_shupm"]
+[ext_resource type="Texture2D" uid="uid://dl1uloqnfiorr" path="res://assets/frogs/PurpleWhite/ToxicFrogPurpleWhite_Idle.png" id="5_8q8sq"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_mirqo"]
+frequency = 0.0198
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_i5gu8"]
+noise = SubResource("FastNoiseLite_mirqo")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ly75u"]
+shader = ExtResource("1_0ahsh")
+shader_parameter/dissolve_value = 1.0
+shader_parameter/burn_size = 0.12
+shader_parameter/burn_color = Color(0.988235, 0.305882, 0.168627, 1)
+shader_parameter/dissolve_texture = SubResource("NoiseTexture2D_i5gu8")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6fus"]
+atlas = ExtResource("2_lxmbs")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gcqgq"]
+atlas = ExtResource("1_0ola6")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rh4p7"]
+atlas = ExtResource("4_shupm")
+region = Rect2(192, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17x7w"]
+atlas = ExtResource("5_8q8sq")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_sqqm7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6fus")
+}],
+"loop": true,
+"name": &"blueblue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gcqgq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rh4p7")
+}],
+"loop": true,
+"name": &"purpleblue",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_17x7w")
+}],
+"loop": true,
+"name": &"purplewhite",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nda4k"]
+radius = 10.2956
+
+[node name="frog" type="AnimatedSprite2D"]
+material = SubResource("ShaderMaterial_ly75u")
+sprite_frames = SubResource("SpriteFrames_sqqm7")
+script = ExtResource("2_caoio")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-3, 2)
+shape = SubResource("CircleShape2D_nda4k")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]
+[connection signal="mouse_entered" from="Area2D" to="." method="_on_area_2d_mouse_entered"]
+[connection signal="mouse_exited" from="Area2D" to="." method="_on_area_2d_mouse_exited"]

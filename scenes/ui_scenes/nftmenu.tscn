@@ -1,0 +1,248 @@
+[gd_scene load_steps=24 format=3 uid="uid://bgejcmbjr38ni"]
+
+[ext_resource type="Texture2D" uid="uid://bimteckimumkf" path="res://assets/ui_component/NFTmenuBackground.png" id="1_3tyk7"]
+[ext_resource type="Script" path="res://scripts/nftmenu.gd" id="1_ttauu"]
+[ext_resource type="Texture2D" uid="uid://cealqxlepdvn5" path="res://assets/ui_component/NFTitem.png" id="2_pohoa"]
+[ext_resource type="Shader" path="res://shaders/Text.gdshader" id="3_xbm0q"]
+[ext_resource type="FontFile" uid="uid://dv1b0itpdjj42" path="res://assets/fonts/PeaberryBase.ttf" id="4_ub4nt"]
+[ext_resource type="Texture2D" uid="uid://diqqat2gwxtf4" path="res://assets/ui_component/Buttons.png" id="5_0cpxg"]
+[ext_resource type="Script" path="res://scripts/ui_button.gd" id="6_jbw6s"]
+[ext_resource type="Texture2D" uid="uid://dd58ilpobomyt" path="res://assets/frogs/NFTFrogs/BlueFrog.png" id="7_v1xw1"]
+[ext_resource type="Texture2D" uid="uid://d0pij4bje1uoo" path="res://assets/frogs/NFTFrogs/CoolFrog.png" id="8_lv237"]
+[ext_resource type="Texture2D" uid="uid://b1ehjg0vu5b4j" path="res://assets/frogs/NFTFrogs/FireFrog.png" id="9_am1a6"]
+[ext_resource type="Texture2D" uid="uid://c632xb3bjp2mm" path="res://assets/frogs/NFTFrogs/KingFrog.png" id="10_dag5x"]
+[ext_resource type="Texture2D" uid="uid://cb581n2y4gh5u" path="res://assets/frogs/NFTFrogs/PirateFrog.png" id="11_8x2fu"]
+[ext_resource type="Texture2D" uid="uid://diucptrbqtuck" path="res://assets/frogs/FrogEdited.png" id="12_21acs"]
+[ext_resource type="Texture2D" uid="uid://jf1jtvvsdijd" path="res://assets/frogs/NFTFrogs/WormFrog.png" id="13_itmpm"]
+[ext_resource type="Texture2D" uid="uid://cyp2tqsmm8mxd" path="res://assets/ui_component/LevelLock.png" id="15_kpm33"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lgy6o"]
+shader = ExtResource("3_xbm0q")
+shader_parameter/frequency = 2.0
+shader_parameter/height = 1.0
+shader_parameter/speed = 2.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ugypt"]
+shader = ExtResource("3_xbm0q")
+shader_parameter/frequency = 1.0
+shader_parameter/height = 2.0
+shader_parameter/speed = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0ewmd"]
+texture = ExtResource("5_0cpxg")
+region_rect = Rect2(15, 13, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_58dhc"]
+texture = ExtResource("5_0cpxg")
+region_rect = Rect2(15, 61, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_riptn"]
+texture = ExtResource("5_0cpxg")
+region_rect = Rect2(15, 109, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ylmv6"]
+texture = ExtResource("5_0cpxg")
+region_rect = Rect2(15, 61, 81, 26)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6p5mi"]
+texture = ExtResource("5_0cpxg")
+region_rect = Rect2(15, 61, 81, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c0d2v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_v1xw1")
+}],
+"loop": true,
+"name": &"BF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("8_lv237")
+}],
+"loop": true,
+"name": &"CF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_am1a6")
+}],
+"loop": true,
+"name": &"FF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_dag5x")
+}],
+"loop": true,
+"name": &"KingFrog",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_8x2fu")
+}],
+"loop": true,
+"name": &"PF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_21acs")
+}],
+"loop": true,
+"name": &"SGF",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("13_itmpm")
+}],
+"loop": true,
+"name": &"WF",
+"speed": 5.0
+}]
+
+[node name="NFTmenu" type="Node2D"]
+script = ExtResource("1_ttauu")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="UI"]
+offset_right = 1152.0
+offset_bottom = 648.0
+texture = ExtResource("1_3tyk7")
+
+[node name="NfTitem" type="Sprite2D" parent="UI"]
+position = Vector2(180, 290)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_pohoa")
+
+[node name="NfTitem2" type="Sprite2D" parent="UI"]
+position = Vector2(580, 290)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_pohoa")
+
+[node name="NfTitem3" type="Sprite2D" parent="UI"]
+position = Vector2(960, 290)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_pohoa")
+
+[node name="NfTitem6" type="Sprite2D" parent="UI"]
+position = Vector2(960, 480)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_pohoa")
+
+[node name="NfTitem4" type="Sprite2D" parent="UI"]
+position = Vector2(180, 480)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_pohoa")
+
+[node name="NfTitem5" type="Sprite2D" parent="UI"]
+position = Vector2(580, 480)
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_pohoa")
+
+[node name="Label" type="Label" parent="UI"]
+material = SubResource("ShaderMaterial_lgy6o")
+offset_left = 328.0
+offset_top = 46.0
+offset_right = 844.0
+offset_bottom = 94.0
+theme_override_fonts/font = ExtResource("4_ub4nt")
+theme_override_font_sizes/font_size = 48
+text = "Your NFT Collection"
+
+[node name="Back" type="Button" parent="UI"]
+material = SubResource("ShaderMaterial_ugypt")
+offset_left = 45.0
+offset_top = 60.0
+offset_right = 261.0
+offset_bottom = 132.0
+scale = Vector2(0.5, 0.5)
+theme_override_colors/font_color = Color(0.223529, 0.223529, 0.223529, 1)
+theme_override_fonts/font = ExtResource("4_ub4nt")
+theme_override_font_sizes/font_size = 32
+theme_override_styles/normal = SubResource("StyleBoxTexture_0ewmd")
+theme_override_styles/hover = SubResource("StyleBoxTexture_58dhc")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_riptn")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_ylmv6")
+theme_override_styles/focus = SubResource("StyleBoxTexture_6p5mi")
+text = "Back"
+script = ExtResource("6_jbw6s")
+
+[node name="eFrogs" type="Node2D" parent="."]
+
+[node name="eFrog1" type="AnimatedSprite2D" parent="eFrogs"]
+position = Vector2(180, 280)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_c0d2v")
+animation = &"KingFrog"
+
+[node name="eFrog2" type="AnimatedSprite2D" parent="eFrogs"]
+position = Vector2(580, 280)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_c0d2v")
+animation = &"BF"
+
+[node name="eFrog3" type="AnimatedSprite2D" parent="eFrogs"]
+position = Vector2(960, 280)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_c0d2v")
+animation = &"SGF"
+
+[node name="eFrog6" type="AnimatedSprite2D" parent="eFrogs"]
+position = Vector2(960, 480)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_c0d2v")
+animation = &"SGF"
+
+[node name="eFrog5" type="AnimatedSprite2D" parent="eFrogs"]
+position = Vector2(580, 480)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_c0d2v")
+animation = &"SGF"
+
+[node name="eFrog4" type="AnimatedSprite2D" parent="eFrogs"]
+position = Vector2(180, 480)
+scale = Vector2(0.3, 0.3)
+sprite_frames = SubResource("SpriteFrames_c0d2v")
+animation = &"SGF"
+
+[node name="Locks" type="Node2D" parent="."]
+
+[node name="LevelLock" type="Sprite2D" parent="Locks"]
+position = Vector2(180, 290)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("15_kpm33")
+
+[node name="LevelLock4" type="Sprite2D" parent="Locks"]
+position = Vector2(180, 480)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("15_kpm33")
+
+[node name="LevelLock5" type="Sprite2D" parent="Locks"]
+position = Vector2(580, 480)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("15_kpm33")
+
+[node name="LevelLock6" type="Sprite2D" parent="Locks"]
+position = Vector2(960, 480)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("15_kpm33")
+
+[node name="LevelLock2" type="Sprite2D" parent="Locks"]
+position = Vector2(580, 280)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("15_kpm33")
+
+[node name="LevelLock3" type="Sprite2D" parent="Locks"]
+position = Vector2(960, 280)
+scale = Vector2(0.45, 0.45)
+texture = ExtResource("15_kpm33")
+
+[connection signal="pressed" from="UI/Back" to="." method="_on_back_pressed"]

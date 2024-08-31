@@ -1,0 +1,254 @@
+[gd_scene load_steps=13 format=3 uid="uid://bgu0xtfb6cqir"]
+
+[ext_resource type="Script" path="res://scripts/spinning_wheel.gd" id="1_6nr61"]
+[ext_resource type="Texture2D" uid="uid://cs0ims0mhbxj8" path="res://assets/ui_component/SpinningWheelCircle2.png" id="1_8y5we"]
+[ext_resource type="Texture2D" uid="uid://diucptrbqtuck" path="res://assets/frogs/FrogEdited.png" id="2_iit8b"]
+[ext_resource type="Texture2D" uid="uid://dhtijw7ed46dh" path="res://assets/ui_component/Croak/SingleCroak.png" id="3_2c63b"]
+[ext_resource type="Texture2D" uid="uid://clfc0aubp4w1w" path="res://assets/ui_component/icon_skull.png" id="4_maqq1"]
+[ext_resource type="FontFile" uid="uid://dv1b0itpdjj42" path="res://assets/fonts/PeaberryBase.ttf" id="5_vsh43"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_q6osn"]
+radius = 12.0493
+height = 238.064
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_6rjuw"]
+radius = 7.95979
+height = 236.211
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_mptvr"]
+radius = 14.0
+height = 252.533
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_wch1a"]
+radius = 9.0
+height = 231.04
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_g4uo5"]
+radius = 14.0
+height = 230.584
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_263i8"]
+radius = 14.0
+height = 230.584
+
+[node name="SpinningWheel" type="Node2D"]
+rotation = 6.28319
+script = ExtResource("1_6nr61")
+
+[node name="SpinningWheelCircle" type="Sprite2D" parent="."]
+rotation = 6.28319
+texture = ExtResource("1_8y5we")
+region_rect = Rect2(310.749, 162.81, 650.439, 623.486)
+
+[node name="FrogEdited" type="Sprite2D" parent="SpinningWheelCircle"]
+position = Vector2(108, 220)
+rotation = -0.47822
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_iit8b")
+
+[node name="SingleCroak" type="Sprite2D" parent="SpinningWheelCircle"]
+position = Vector2(234, -89)
+rotation = -1.91463
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("3_2c63b")
+
+[node name="SingleCroak2" type="Sprite2D" parent="SpinningWheelCircle"]
+position = Vector2(-100, -228)
+rotation = 2.6337
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("3_2c63b")
+
+[node name="IconSkull" type="Sprite2D" parent="SpinningWheelCircle"]
+position = Vector2(-96, 229)
+rotation = 0.383972
+scale = Vector2(6, 6)
+texture = ExtResource("4_maqq1")
+
+[node name="Label4" type="Label" parent="SpinningWheelCircle"]
+offset_left = -275.0
+offset_top = -128.0
+offset_right = -20.0001
+offset_bottom = -80.0
+rotation = 0.383972
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 40
+text = "Slap Yourself"
+
+[node name="Label4" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 296.629
+offset_top = -140.068
+offset_right = 404.629
+offset_bottom = -92.0684
+rotation = 2.32652
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "+10 "
+
+[node name="Label6" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 524.173
+offset_top = -54.0441
+offset_right = 632.173
+offset_bottom = -6.04409
+rotation = 3.94444
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "+30"
+
+[node name="Label8" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 329.51
+offset_top = 171.556
+offset_right = 437.51
+offset_bottom = 219.556
+rotation = 0.0174533
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "-30"
+
+[node name="Label11" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 472.884
+offset_top = 216.089
+offset_right = 619.884
+offset_bottom = 264.089
+rotation = 5.42099
+scale = Vector2(1.1, 1.1)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "eFrog"
+
+[node name="Label12" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 456.893
+offset_top = 156.49
+offset_right = 570.893
+offset_bottom = 204.49
+rotation = 5.42797
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "Free"
+
+[node name="Label9" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 347.059
+offset_top = 211.652
+offset_right = 410.059
+offset_bottom = 259.652
+rotation = 0.0174533
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "IQ"
+
+[node name="Label7" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 566.833
+offset_top = -68.5835
+offset_right = 716.833
+offset_bottom = -20.5835
+rotation = -2.33874
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "Croak"
+
+[node name="Label5" type="Label" parent="SpinningWheelCircle/Label4"]
+layout_mode = 0
+offset_left = 283.249
+offset_top = -183.196
+offset_right = 433.249
+offset_bottom = -135.196
+rotation = 2.30907
+scale = Vector2(0.9, 0.9)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "Croak"
+
+[node name="Label3" type="Label" parent="SpinningWheelCircle"]
+offset_left = 107.0
+offset_top = 16.0
+offset_right = 359.0
+offset_bottom = 64.0
+rotation = 0.418879
+scale = Vector2(0.8, 0.8)
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "Try Again"
+
+[node name="Spin" type="Label" parent="SpinningWheelCircle"]
+offset_left = -293.0
+offset_top = 102.0
+offset_right = -101.0
+offset_bottom = 150.0
+rotation = -0.436332
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "+1 Spin"
+
+[node name="Label5" type="Label" parent="SpinningWheelCircle"]
+offset_left = 8.99998
+offset_top = -73.0
+offset_right = 240.0
+offset_bottom = -25.0
+rotation = -1.11177
+theme_override_fonts/font = ExtResource("5_vsh43")
+theme_override_font_sizes/font_size = 48
+text = "+20 Aura"
+
+[node name="FS" type="Area2D" parent="."]
+position = Vector2(267, -108)
+rotation = -0.359538
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FS"]
+position = Vector2(-578.781, 16.41)
+shape = SubResource("CapsuleShape2D_q6osn")
+
+[node name="CGS" type="Area2D" parent="."]
+position = Vector2(272, -110)
+rotation = -0.359538
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CGS"]
+position = Vector2(-300.464, -280.661)
+rotation = 1.55509
+shape = SubResource("CapsuleShape2D_6rjuw")
+
+[node name="FreeNFT" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="FreeNFT"]
+position = Vector2(113, 244)
+rotation = 1.06465
+shape = SubResource("CapsuleShape2D_mptvr")
+
+[node name="CGB" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CGB"]
+position = Vector2(267, -108)
+rotation = -0.359538
+shape = SubResource("CapsuleShape2D_wch1a")
+
+[node name="CLB" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CLB"]
+position = Vector2(-111, 260)
+rotation = -1.20951
+shape = SubResource("CapsuleShape2D_g4uo5")
+
+[node name="CLS" type="Area2D" parent="."]
+collision_layer = 128
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CLS"]
+position = Vector2(-266, -108)
+rotation = 0.466003
+shape = SubResource("CapsuleShape2D_263i8")
